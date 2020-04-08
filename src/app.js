@@ -16,6 +16,7 @@ app.get("/repositories", (request, response) => {
 
 app.post("/repositories", (request, response) => {
   const { url ,title, techs} = request.body;
+  
   const repositorie = {
     id:uuid(), 
     title, 
@@ -30,7 +31,7 @@ app.post("/repositories", (request, response) => {
 
 app.put("/repositories/:id", (request, response) => {
   const {id} = request.params;
-  const {title,url, techs,likes} = request.body;
+  const {title,url, techs} = request.body;
 
   const repositorieIndex = repositories.findIndex(repositorie => repositorie.id === id);
 
